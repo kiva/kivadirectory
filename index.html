@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kiva City San Jose</title>
+  <meta name="description" content="Kiva City San Jose">
+  <meta name="author" content="Vy Thai">
+  <link rel='icon' href='favicon.ico' type='image/x-icon' />
+
+  <link rel="stylesheet" href="index.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <script src="index.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsIy1CM0YtdD_sSnnqGGgbWyaGMRCAi6I&libraries=places&callback=initAutocomplete"
+         async defer></script>
+
+</head>
+
+<body>  
+  <div class="navbar">
+    
+
+       <div class="menu">
+          <div class="menu" id="menu-1">
+            <a href="http://kiva.org">
+             <img class="menu" id="logo" src="kiva_logo_white.png" alt="Kiva" style="border:none;" />
+            </a>
+          </div>
+           <div class="menu" id="menu-2"><a href="index.html">Visit a Borrower</a></div>
+           <div class="menu" id="menu-3"><a href="https://www.kiva.org/lend?distributionModel=direct&city_state=San%20Jose,CA%7CAtherton,CA%7CBelmont,CA%7CBrisbane,CA%7CBurlingame,CA%7CCampbell,CA%7CCastro%20Valley,CA%7CColma,CA%7CCupertino,CA%7CDaly%20City,CA%7CEast%20Palo%20Alto,CA%7CFoster%20City,CA%7CFremont,CA%7CGilroy,CA%7CHalf%20Moon%20Bay,CA%7CHayward,CA%7CHillsborough,CA%7CLa%20Honda,CA%7CLadera,CA%7CLoma%20Mar,CA%7CLos%20Altos,CA%7CLos%20Altos%20Hills,CA%7CLos%20Gatos,CA%7CMenlo%20Park,CA%7CMillbrae,CA%7CMilpitas,CA%7CMonte%20Sereno,CA%7CMorgan%20Hill,CA%7CMountain%20View,CA%7CPacifica,CA%7CPalo%20Alto,CA%7CPescadero,CA%7CPortola%20Valley,CA%7CRedwood%20City,CA%7CSan%20Bruno,CA%7CSan%20Carlos,CA%7CSan%20Gregorio,CA%7CSan%20Jose,CA%7CSan%20Mateo,CA%7CSanta%20Clara,CA%7CSaratoga,CA%7CSouth%20San%20Francisco,CA%7CSunnyvale,CA%7CWoodside,CA&sortBy=popularity" target="_blank">Lend</a></div>
+           <div class="menu" id="menu-4"><a href="https://www.kiva.org/borrow?utm_source=corporate_marketing&utm_medium=lp_SanJose&utm_campaign=cities" target="_blank">Borrow</a></div>
+           <div class="menu" id="menu-5"><a href="https://www.kiva.org/trustees/apply?utm_source=corporate_marketing&utm_medium=lp_sanjose&utm_campaign=cities" target="_blank">Trustees</a></div>
+           <div class="menu" id="menu-6"><a href="https://www.ebay.com/rpp/kivamarketplace/" target="_blank">Markerplace</a></div>
+      </div>
+  </div>
+
+  <div id="map"></div>
+  
+
+   <form class="search-area">
+      
+        
+        <div class= "input-area">
+        <select class="borrower-type" autocomplete="off">
+          <option value="">Borrower Type</option>
+          <option value="">All</option>
+          <option>Women</option>
+          <option>Men</option>
+          <option>Individual</option>
+          <option>Group</option>
+        </select>
+        
+            <select class="sector" autocomplete="off">
+              <option value="">Business Sector</option>
+              <option value="">All</option>
+              <option>Agriculture</option>
+              <option>Arts</option>
+              <option>Construction</option>
+              <option>Food</option>
+              <option>Furniture</option>
+              <option>Retail</option>
+              <option>Manufacturing</option>
+              <option>Services</option>
+              <option>Other</option>
+            </select>
+
+       <input type=text class="search-term" autocomplete="off" placeholder="Enter Keywords?" />
+        </div>
+       <button class="search-button" type="button" autocomplete="off">Search</button>
+       <button class="reset-button" type="button" autocomplete="off">Reset</button>
+      </form>
+      
+      <main>
+
+      </main>
+ 
+</body>
+
+<footer>
+ 
+ <div class="footer-row">
+  <div class="footer-column">
+   <p class="footer-titles">Follow</p>
+
+   <div class="footer-social-links">
+    <a href="https://twitter.com/kiva_us" target="_blank"><img src="twitter.png"></a>
+    <a href="https://www.youtube.com/playlist?list=PLSbHF3bzSPAWt6ydFGlcXkFpQ__OEDIOa" target="_blank"><img src="youtube.png"></a>
+    <a href="https://www.facebook.com/kiva" target="_blank"><img src="facebook.png"></a>
+   </div>
+  
+   <p><a href="https://www.kiva.org/businesscenter" target="_blank" class="footer-links">Read our blog</a></p>
+   <p><a href="mailto:borrowers@kiva.org target=" class="footer-links">Email us</a></p>
+  </div>
+
+  <div class="footer-column">
+    <p class="footer-titles">Connect</p>
+    <p><a href="https://www.kiva.org/lend?country=us" target="_blank" class="footer-links">Make a loan</a></p>
+    <p><a href="https://www.kiva.org/borrow?utm_source=corporate_marketing&utm_medium=lp_sanjose&utm_campaign=cities" target="_blank" class="footer-links">Become a borrower</a></p>
+    <p><a href="https://www.kiva.org/trustees" target="_blank" class="footer-links">View our Trustees</a></p>
+    <p><a href="https://www.kiva.org/trustees/apply" target="_blank" class="footer-links">Become a Trustee</a></p>
+  </div>
+
+  <div class="footer-column">
+    <p class="footer-titles">Learn</p>
+    <p><a href="http://www.kivaushub.org/borrower?utm_source=corporate_marketing&utm_medium=lp_sanjose&utm_campaign=cities" target="_blank" class="footer-links">How it works</a></p>
+    <p><a href="https://www.kiva.org/borrow?utm_source=corporate_marketing&utm_medium=lp_sanjose&utm_campaign=cities#faqs" target="_blank" class="footer-links">FAQs</a></p>
+    <p><a href="https://www.kiva.org/legal/terms" target="_blank" class="footer-links">Terms of use</a></p>
+    <p><a href="https://www.kiva.org/legal/privacy" target="_blank" class="footer-links">Privacy policy</a></p>
+  </div>
+
+ </div>
+ <div class="footer-credits">
+    <p class="disclaimer">Lending through Kiva involves risk of principal loss. Neither Kiva nor Kiva trustees guarantee repayment or offer a financial return on your loan.</p>
+    <p class="credit">&copy; 2018 - This website is not supported by Kiva.org.</p>
+  </div>
+
+</footer>
+</html>

@@ -1,0 +1,121 @@
+[
+  {
+    "name" : "Doniga",
+    "businessName" : "Markegard Family Grass-Fed LLC",
+    "image": "https://www-kiva-org-3.global.ssl.fastly.net/img/w960/6dae11e8ff3e770e453f24a44635c9b0.jpg",
+    "address1": "20080 Cabrillo Hwy S",
+    "address2": "Half Moon Bay, CA 94019",
+    "phone": "650-2454-559",
+    "email":"info@markegardfamily.com",
+    "website": "http://www.markegardfamily.com",
+    "kivaLink": "https://www.kiva.org/lend/1080286/",
+    "sector": "Agriculture",
+    "keywords": ["meat", "livestock", "dairy", "farmer", "farm"],
+    "type": "Women"
+  },
+
+  {
+    "name" : "Fernando",
+    "businessName" : "Force 129",
+    "image": "https://www-kiva-org-4.global.ssl.fastly.net/img/w960/77dc184c4e1ca7b27791539d98e8b094.jpg",
+    "address1": "88 South 4th Street",
+    "address2": "San Jose, CA 95112",
+    "phone": "408-770-6993",
+    "email":"force129@gmail.com",
+    "website": "http://www.force129.com/",
+    "kivaLink": "https://www.kiva.org/lend/1403706",
+    "sector": "Arts",
+    "keywords": ["design", "graffiti", "painting"],
+    "type": "Men"
+  },
+
+  {
+    "name" : "Cristian",
+    "businessName" : "J Style at Home Inc.",
+    "image": "http://eisdesigninc.com/demos/jstylev9/wp-content/uploads/2017/04/Cristian.jpg",
+    "address1": "3890 Bayshore Blvd.",
+    "address2": "Brisbane, CA 94005",
+    "phone": "650-281-3222",
+    "email":"cristian-cabrera@jstyleathome.com",
+    "website": "http://jstyleathome.com/",
+    "kivaLink": "https://www.kiva.org/lend/1077956",
+    "sector": "Construction",
+    "keywords": ["interior", "design", "home", "custom"],
+    "type": "Men"
+  },
+
+  {
+    "name" : "Guillermo",
+    "businessName" : "Eco Delight Coffee",
+    "image": "http://www.ecodelightcoffee.com/wp-content/uploads/2017/08/EcoDelight-Coffee-Owner-1280-525.jpg",
+    "address1": "1616 Corporate Cir.",
+    "address2": "Petaluma, CA 94954",
+    "phone": "707-344-3316",
+    "email":"guillermo_e_moran@hotmail.com",
+    "website": "http://www.ecodelightcoffee.com/",
+    "kivaLink": "https://www.kiva.org/lend/1591843",
+    "sector": "Food",
+    "keywords": ["coffee", "cafe", "farmer"],
+    "type": "Men"
+  },
+
+  {
+    "name" : "Dave",
+    "businessName" : "D. Benjamin, LLC",
+    "image": "https://www-kiva-org-3.global.ssl.fastly.net/img/w960/565b70441d81fc49f56b21324da278fe.jpg",
+    "address1": "97 South 2nd Street, Suite 100",
+    "address2": "San Jose, CA 95113",
+    "phone": "408-628-9400",
+    "email":"dave.yale@d-benjamin.com",
+    "website": "https://www.d-benjamin.com/",
+    "kivaLink": "https://www.kiva.org/lend/1336185",
+    "sector": "Furniture",
+    "keywords": ["furniture", "interior", "design", "home"],
+    "type": "Men"
+  },
+
+  {
+    "name" : "Pernell",
+    "businessName" : "ADO Lifestyle",
+    "image": "https://www-kiva-org-3.global.ssl.fastly.net/img/w960/715928e1e3448c077af56eb85e99173c.jpg",
+    "address1": "N/A",
+    "address2": "N/A",
+    "phone": "609-271-6383",
+    "email":"adodreamhole@gmail.com",
+    "website": "https://www.adolifestyle.com/",
+    "kivaLink": "https://www.kiva.org/lend/1161286",
+    "sector": "Retail",
+    "keywords": ["clothing", "fashion"],
+    "type": "Men"
+  },
+
+  {
+    "name" : "Julianne",
+    "businessName" : "Faerie Goatmother",
+    "image": "https://www-kiva-org-3.global.ssl.fastly.net/img/w960/255ef33bcbce7bc7933643d6f16cacae.jpg",
+    "address1": "11621 Love Creek Road",
+    "address2": "Ben Lomond, CA 95005",
+    "phone": "650-387-6136",
+    "email":"julianne@faeriegoatmother.com",
+    "website": "https://faeriegoatmother.com/",
+    "kivaLink": "https://www.kiva.org/lend/1091033",
+    "sector": "Manufacturing",
+    "keywords": ["soap", "goatmilk", "dairy", "farmer"],
+    "type": "Women"
+  },
+
+  {
+    "name" : "Patricia",
+    "businessName" : "Maxwell Senior Care Services",
+    "image": "https://www-kiva-org-0.global.ssl.fastly.net/img/w960/85aecb61f69c61fb77de60cd67d65868.jpg",
+    "address1": "1611 Borel Place, Suite 200",
+    "address2": "San Mateo, CA 94402",
+    "phone": "650-218-5234",
+    "email":"bob@maxwellseniorcare.com",
+    "website": "https://www.maxwellseniorcare.com/",
+    "kivaLink": "https://www.kiva.org/lend/1154274",
+    "sector": "Services",
+    "keywords": ["senior care", "caregiving"],
+    "type": "Women"
+  }
+]
