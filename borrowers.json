@@ -86,7 +86,7 @@
     "kivaLink": "https://www.kiva.org/lend/1161286",
     "sector": "Retail",
     "keywords": ["clothing", "fashion"],
-    "type": "Men"
+    "type": ["Men", "Group"]
   },
 
   {
