@@ -10,7 +10,7 @@ $(document).ready(function ($) {
   initAutocomplete();
 });
 
-// use fetch to retrieve borrowers.json database, and report any errors that occur in the fetch operation
+// Use fetch to retrieve borrowers.json database, and report any errors that occur in the fetch operation
 // once the borrowers have been successfully loaded and formatted as a JSON object
 // using response.json(), run the initialize() function
 fetch('borrowers.json').then(function (response) {
