@@ -1,3 +1,32 @@
+    /*
+    For pagination:
+    Have a global page number variable:
+    
+    var pageNumber = 1;
+    
+    - This page number variable will be reset every time the user hits search... this means the first line of runQuery can be :
+    
+    pageNumber = 1;
+
+    The below for loop will look like this:
+
+    const numberOfResultsPerPage = 5;
+     for (var i = 0 + numberOfResultsPerPage * (pageNumber - 1); i < numberOfResultsPerPage * (pageNumber); i++) {
+      console.log(filteredBorrowers.length);
+      fetchBlob(filteredBorrowers[i]);
+    }
+
+    Next steps:
+    Create next page button
+    onclick = function() {
+      // extra credit: Don't let the pages be too big or small
+      pageNumber = pageNumber + 1;
+      renderResults();
+      // same as pageNumber += 1;
+    }
+     */
+
+
 // create a borrowers variable to later assign it to borrowers.json database
 var borrowers;
 

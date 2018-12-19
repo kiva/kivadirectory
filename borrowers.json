@@ -11,7 +11,7 @@
     "kivaLink": "https://www.kiva.org/lend/1080286/",
     "sector": "Agriculture",
     "keywords": ["meat", "livestock", "dairy", "farmer", "farm"],
-    "type": "Women"
+    "type": ["Women", "Individual"]
   },
 
   {
@@ -26,7 +26,7 @@
     "kivaLink": "https://www.kiva.org/lend/1403706",
     "sector": "Arts",
     "keywords": ["design", "graffiti", "painting"],
-    "type": "Men"
+    "type": ["Men", "Individual"]
   },
 
   {
@@ -41,7 +41,7 @@
     "kivaLink": "https://www.kiva.org/lend/1077956",
     "sector": "Construction",
     "keywords": ["interior", "design", "home", "custom"],
-    "type": "Men"
+    "type": ["Men", "Individual"]
   },
 
   {
@@ -51,12 +51,12 @@
     "address1": "1616 Corporate Cir.",
     "address2": "Petaluma, CA 94954",
     "phone": "707-344-3316",
-    "email":"guillermo_e_moran@hotmail.com",
+    "email":"",
     "website": "http://www.ecodelightcoffee.com/",
     "kivaLink": "https://www.kiva.org/lend/1591843",
     "sector": "Food",
     "keywords": ["coffee", "cafe", "farmer"],
-    "type": "Men"
+    "type": ["Men", "Individual"]
   },
 
   {
@@ -71,7 +71,7 @@
     "kivaLink": "https://www.kiva.org/lend/1336185",
     "sector": "Furniture",
     "keywords": ["furniture", "interior", "design", "home"],
-    "type": "Men"
+    "type": ["Men", "Group"]
   },
 
   {
@@ -81,7 +81,7 @@
     "address1": "N/A",
     "address2": "N/A",
     "phone": "609-271-6383",
-    "email":"adodreamhole@gmail.com",
+    "email": "",
     "website": "https://www.adolifestyle.com/",
     "kivaLink": "https://www.kiva.org/lend/1161286",
     "sector": "Retail",
@@ -101,7 +101,7 @@
     "kivaLink": "https://www.kiva.org/lend/1091033",
     "sector": "Manufacturing",
     "keywords": ["soap", "goatmilk", "dairy", "farmer"],
-    "type": "Women"
+    "type": ["Women", "Individual"]
   },
 
   {
@@ -116,6 +116,6 @@
     "kivaLink": "https://www.kiva.org/lend/1154274",
     "sector": "Services",
     "keywords": ["senior care", "caregiving"],
-    "type": "Women"
+    "type": ["Women", "Individual"]
   }
 ]
