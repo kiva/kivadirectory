@@ -90,7 +90,7 @@ function runQuery() {
   // reset filteredBorrowers to empty, just in time for a new filtering to execute
   filteredBorrowers = [];
 
-  // when the reset button is clicked, set finalGroup equals to database 
+  // when reset button is clicked, set finalGroup equals to database 
   //then invoke UpdateDisplay() to display all borrowers
   $(document).on('click', '.reset-button', function () {
     filteredBorrowers = borrowers;
