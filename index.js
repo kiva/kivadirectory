@@ -1,11 +1,18 @@
 // Create a borrowers variable to later assign it to borrowers.json database
-// Create filteredBorrowers, pageNumber and numberOfResultsPerPage to have them accessible globally
 var borrowers;
+
+// Create filteredBorrowers, pageNumber and numberOfResultsPerPage to have them accessible globally
 var filteredBorrowers;
+
+// Create Json variable
+// NOTE: because of CORS errors when displaying the json file locally, it now lives on Gist instead. contact developer for more information
+var jsonFile = 'https://gist.githubusercontent.com/incakoala/17eff08476f009b81dba34aa77cde32c/raw/6535155bd20dc03cc2a17d64510e9f54a0ddbba9/borrowers.json'
+
+// Create page number specifications to later filter results by page
 var pageNumber = 1;
 const numberOfResultsPerPage = 4;
 
-//initAutocomplete() to execute Google Map functionalities
+// Execute initAutocomplete() when page is loaded to load Google Map functionalities
 $(document).ready(function ($) {
   initAutocomplete();
 });
@@ -13,7 +20,7 @@ $(document).ready(function ($) {
 // Use fetch to retrieve borrowers.json database, and report any errors that occur in the fetch operation
 // once the borrowers have been successfully loaded and formatted as a JSON object
 // using response.json(), run the initialize() function
-fetch('borrowers.json').then(function (response) {
+fetch(jsonFile).then(function (response) {
   if (response.ok) {
     response.json().then(function (json) {
       borrowers = json;
@@ -24,15 +31,17 @@ fetch('borrowers.json').then(function (response) {
         renderResults();
       });
 
+      // Next button
       $(document).on('click', '.next-button', function () {
         const lastPage = filteredBorrowers.length / numberOfResultsPerPage;
         pageNumber = Math.min(
           pageNumber + 1,
           lastPage
-          );
+        );
         renderResults();
       });
 
+      // Previous button
       $(document).on('click', '.previous-button', function () {
         const firstPage = 1;
         pageNumber = Math.max(
@@ -41,6 +50,7 @@ fetch('borrowers.json').then(function (response) {
         renderResults();
       });
 
+      // First button
       $(document).on('click', '.first', function () {
         const firstPage = 1;
         pageNumber = Math.min(
@@ -48,6 +58,7 @@ fetch('borrowers.json').then(function (response) {
         renderResults();
       });
 
+      // Last button
       $(document).on('click', '.last', function () {
         const lastPage = filteredBorrowers.length / numberOfResultsPerPage;
         pageNumber = Math.min(
@@ -65,8 +76,6 @@ fetch('borrowers.json').then(function (response) {
 });
 
 
-// Reset button that clears all search filters and returns all borrowers info //
-
 // SEARCH FEATURES //
 
 // runQuery() performs functionalities for buttons and then reads filters and searchbox then filter json
@@ -77,7 +86,7 @@ function runQuery() {
   // Update display so that it shows all of existing borrowers in the database
   filteredBorrowers = borrowers;
   renderResults();
-
+  
   // reset filteredBorrowers to empty, just in time for a new filtering to execute
   filteredBorrowers = [];
 
@@ -93,7 +102,7 @@ function runQuery() {
     $(".search-term").val("");
   });
 
-// reads filters and searchbox then filter json
+  // reads filters and searchbox then filter json
   var borrowerType = document.querySelector('.borrower-type').value;
   let doesBorrowerTypeExist;
   if (borrowerType === '') {
@@ -157,13 +166,14 @@ function renderResults() {
     const endOfArray = filteredBorrowers.length;
     const lastResultToRender = Math.min(endOfPage, endOfArray);
     for (let i = resultOffset; i < lastResultToRender; i++) {
-      console.log(filteredBorrowers.length);
       fetchBlob(filteredBorrowers[i]);
     }
   }
 
+  // Execute fetchBlob, which contains functions that require information from the newly generated filteredBorrowers array (or borrower)
   function fetchBlob(borrower) {
     showResult(borrower);
+    addMarker(borrower);
   }
 
   // Display a borrower inside the <main> element
@@ -185,14 +195,13 @@ function renderResults() {
     heading.textContent = borrower.name;
 
     description.innerText = borrower.sector;
-    titles.innerText = "Business Name:" + "\n" + "Address:" + "\n" + "  " + (borrower.email ? "\nEmail:": '');
+    titles.innerText = "Business Name:" + "\n" + "Address:" + "\n" + "  " + (borrower.email ? "\nEmail:" : '');
     para.innerText = borrower.businessName + "\n" + borrower.address1 + "\n" +
-      borrower.address2 + "\n"  + (borrower.email || '');
+      borrower.address2 + "\n" + (borrower.email || '');
 
     image.src = borrower.image;
-
+    
     website.innerHTML = ("Website").link(borrower.website);
-
     kiva.innerHTML = ("Kiva Loan").link(borrower.kivaLink);
 
     // append the elements to the DOM as appropriate, to add the borrower to the UI
@@ -205,73 +214,62 @@ function renderResults() {
     section.appendChild(website);
     section.appendChild(kiva);
   }
+
+  // Show Google map markers for the business addresses saved in filterBorrowers array
+  function addMarker(borrower) {
+    // Geocode given addresses into latlng
+    var address = borrower.address1 + " " + borrower.address2
+    geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == 'OK') {
+        map.setCenter(new google.maps.LatLng(37.798133, -122.453683));
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+        });
+        
+        // when marker is clicked, zoom in
+        marker.addListener('click', function() {
+          map.setZoom(13);
+          map.setCenter(marker.getPosition());
+        });
+        
+        // create infoWindow with business name and address
+        function addInfoWindow(marker, name, address1, address2) {
+          var infoWindow = new google.maps.InfoWindow({
+            content: name + " - " + address1 + address2,
+            maxWidth: 150,
+          });
+          
+          // when marker is clicked,open infoWindow
+          google.maps.event.addListener(marker, 'click', function () {
+            infoWindow.open(map, marker);
+          });
+          
+          // when infoWindow is closed, zoom out
+          google.maps.event.addListener(infoWindow, 'closeclick', function() {
+            map.setZoom(8);
+            map.setCenter(new google.maps.LatLng(37.798133, -122.453683));
+          });
+        }
+        addInfoWindow(marker, borrower.businessName, borrower.address1, borrower.address2);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
 }
 
 // MAP //
 
-function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 37.321488, lng: -121.878506 },
-    zoom: 13,
-    mapTypeId: 'roadmap'
-  });
-
-  // Create the search box and link it to the UI element.
-  var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function () {
-    searchBox.setBounds(map.getBounds());
-  });
-
-  var markers = [];
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
-  searchBox.addListener('places_changed', function () {
-    var places = searchBox.getPlaces();
-
-    if (places.length == 0) {
-      return;
-    }
-
-    // Clear out the old markers.
-    markers.forEach(function (marker) {
-      marker.setMap(null);
-    });
-    markers = [];
-
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function (place) {
-      if (!place.geometry) {
-        console.log("Returned place contains no geometry");
-        return;
-      }
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
-  });
+// excecute Google map
+var geocoder;
+var map;
+function initAutocomplete(borrower) {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(37.798133, -122.453683);
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
+  }
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
 }
