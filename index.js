@@ -6,7 +6,7 @@ var filteredBorrowers;
 
 // Create Json variable
 // NOTE: because of CORS errors when displaying the json file locally, it now lives on Gist instead. contact developer for more information
-var jsonFile = 'https://gist.githubusercontent.com/incakoala/17eff08476f009b81dba34aa77cde32c/raw/6535155bd20dc03cc2a17d64510e9f54a0ddbba9/borrowers.json'
+var jsonFile = 'https://gist.githubusercontent.com/incakoala/17eff08476f009b81dba34aa77cde32c/raw/43c039a0a75941cbb14e9956920125b0f8396b44/borrowers.json'
 
 // Create page number specifications to later filter results by page
 var pageNumber = 1;
