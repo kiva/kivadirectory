@@ -170,7 +170,7 @@ function renderResults() {
     }
   }
 
-  // Execute fetchBlob, which contains functions that require information from the newly generated filteredBorrowers array (or borrower)
+  // execute fetchBlob, which contains functions that require information from the newly generated filteredBorrowers array (or borrower)
   function fetchBlob(borrower) {
     showResult(borrower);
     addMarker(borrower);
