@@ -1,6 +1,7 @@
 // Create a borrowers variable to later assign it to borrowers.json database
 var borrowers;
 
+// 
 // Create filteredBorrowers, pageNumber and numberOfResultsPerPage to have them accessible globally
 var filteredBorrowers;
 
